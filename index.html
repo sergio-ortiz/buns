@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>todo bun</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link
+		  rel="stylesheet"
+		  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.pumpkin.min.css"
+		/>
+	</head>
+	<body>
+		<header>
+			<hgroup>
+				<h1>todo demo</h1>
+				<h2>no web framework. no client js. no css. no htmx.</h2>
+			</hgroup>
+		</header>
+
+		<main>
+			<hr>
+			<form action="/create#todos" method="post" target=htmz>
+				<label for="todo">Oven</label>
+				<input id="todo" name="todo" type="text" placeholder="put todo bun in the oven" />
+				<button type="submit">Bake</button>
+			</form>
+
+			<ul id="todos"></ul>
+		</main>
+
+		<iframe hidden name=htmz onload="setTimeout(()=>document.querySelector(contentWindow.location.hash||null)?.replaceWith(...contentDocument.body.childNodes))"></iframe>
+	</body>
+</html>

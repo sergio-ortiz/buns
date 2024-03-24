@@ -1,0 +1,8 @@
+version: '3.9'
+
+services:
+  app:
+    image: "oven/bun:latest"
+    command: "/bin/sh -c 'bun run --watch index.js'"
+    ports:  ["3000:3000"]
+    volumes: ["./:/home/bun/app"]
